@@ -2,8 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#class: a set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.
-#object:one of instances of the class. which can perform the functionalities which are defined in the class.
+#build class called Polynomial
 class Polynomial:
     #__init__ is a constructor for the class 'polynomial'
     def __init__(self,coefficients={0:0}): #place all initial attributes for polynomial: have one, coefficients as a dictionary.
@@ -11,9 +10,8 @@ class Polynomial:
         if self.coefficients == {}: #if no coefficients
             self.coefficients[0]=0 # add 0x^0 to polynomial
     
-    # degree is a method build for Polynomial: find the degree of poly
-    def degree(self): 
-        #degree of poly is the highest degree (key) in dict.
+    # find the degree of poly
+    def degree(self):
         return max(list(self.coefficients)) 
     
     # __call__: template to call the already instantiated class to do something 
@@ -59,6 +57,11 @@ class Polynomial:
         for value in coefficients.values():
             coefficients[value] *= -1 #gives an Attribute error
         return Polynomial()
+    
+    #test __neg__()
+    p = Polynomial({0:1, 1:1, 2:1}) #my polynomial p = 1+x+x^2
+    new = p.__neg__
+    print(new.coefficients) #Attribute error
   
     # self == other
     """def __eq__(self,other):
