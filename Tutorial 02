@@ -57,7 +57,7 @@ class Polynomial:
     # -self 
     def __neg__(self):
         for value in coefficients.values():
-            coefficients[value] *= -1
+            coefficients[value] *= -1 #gives an Attribute error
         return Polynomial()
   
     # self == other
@@ -69,7 +69,7 @@ class Polynomial:
             for c in self.coefficients.values():
                 for d in other.coefficients.values():
                     if self.coefficients[c] == other.coefficients[d]:
-                        return True
+                        return True #Boolhas no attribute error
                     else:                                             
                         return False
         #check poly powers are equal
